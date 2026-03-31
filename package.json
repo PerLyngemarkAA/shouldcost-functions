@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "node /azure-functions-host/start.js"
+  },
   "dependencies": {
     "@azure/openai": "^2.0.0",
     "node-fetch": "^3.3.2"
