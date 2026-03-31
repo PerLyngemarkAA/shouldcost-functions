@@ -1,8 +1,12 @@
-
 FROM mcr.microsoft.com/azure-functions/node:4-node22
+
 WORKDIR /home/site/wwwroot
-COPY package.json ./
+
+COPY package.json .
 RUN npm install --omit=dev
+
 COPY . .
-EXPOSE 80
-CMD ["npm","start"]
+
+# DO NOT override CMD
+# DO NOT run npm start
+# DO NOT start the host yourself
