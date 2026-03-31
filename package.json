@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
-    "@azure/openai": "^1.0.0",
+    "@azure/openai": "^2.0.0",
     "node-fetch": "^3.3.2"
   }
 }
