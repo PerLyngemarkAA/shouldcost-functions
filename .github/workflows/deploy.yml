@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build container
-        run: docker build -t ghcr.io/PerLyngemarkAA/shouldcost-functions:latest .
+        run: docker build -t ghcr.io/perlyngemarkaa/shouldcost-functions:latest .
 
       - name: Push container
-        run: docker push ghcr.io/PerLyngemarkAA/shouldcost-functions:latest
+        run: docker push ghcr.io/perlyngemarkaa/shouldcost-functions:latest
