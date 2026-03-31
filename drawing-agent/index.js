@@ -1,9 +1,9 @@
-import { AzureOpenAI } from "@azure/openai";
+import OpenAI from "openai";
 import fetch from "node-fetch";
 
-// ------------------------------
+// -----------------------------
 // ENVIRONMENT
-// ------------------------------
+// -----------------------------
 const ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT;
 const API_KEY = process.env.AZURE_OPENAI_API_KEY;
 
@@ -12,10 +12,10 @@ const MODEL_MAIN = process.env.AZURE_MODEL_MAIN || "gpt-4o";
 const MODEL_PREMIUM = process.env.AZURE_MODEL_PREMIUM || "gpt-4.1";
 
 // Azure OpenAI Client
-const client = new AzureOpenAI({
-  endpoint: ENDPOINT,
-  apiKey: API_KEY,
-  apiVersion: "2024-10-01-preview"
+const client = new OpenAI({
+  apiKey: process.env.AZURE_OPENAI_API_KEY,
+  baseURL: `${process.env.AZURE_OPENAI_ENDPOINT}/openai/deployments`,
+  defaultQuery: { "api-version": "2024-10-01-preview" }
 });
 
 // ------------------------------
